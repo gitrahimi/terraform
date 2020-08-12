@@ -1,4 +1,3 @@
-
 resource "aws_iam_group_membership" "developers_team" {
   name = "developers-group-membership"
 
@@ -6,9 +5,9 @@ resource "aws_iam_group_membership" "developers_team" {
     "${aws_iam_user.tim.name}",
   ]
 
-users =[ "${aws_iam_user.bob.name}"]
+  users = ["${aws_iam_user.bob.name}"]
 
-users =["${aws_iam_user.ben.name}"]
+  users = ["${aws_iam_user.ben.name}"]
   group = "${aws_iam_group.developers.name}"
 }
 
