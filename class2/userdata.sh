@@ -1,6 +1,5 @@
 #!/bin/bash
 sudo su
-yum update -y
 yum install httpd -y 
 systemctl start httpd
 systemctl enable httpd
@@ -31,15 +30,16 @@ echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 systemctl restart httpd
 
 
+## Installing MariaDB
 yum install mariadb-server mariadb -y
-    3  systemctl start mariadb
-    4  systemctl enable mariadb
-    5  mysql_secure_installation
-    6  mysql
-    7  systemctl restart mariadb
-    8  getenforce
-    9  vi /etc/sysconfig/selinux
-   10  setenforce 0
-   11  getenforce
-   12  systemctl restart mariadb
-   13  systemctl status mariadb
+systemctl start mariadb
+systemctl enable mariadb
+mysql_secure_installation
+mysql
+systemctl restart mariadb
+getenforce
+vi /etc/sysconfig/selinux
+setenforce 0
+getenforce
+systemctl restart mariadb
+systemctl status mariadb
