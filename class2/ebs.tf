@@ -1,5 +1,5 @@
 resource "aws_ebs_volume" "example" {
-  availability_zone = "us-east-1a"
+  availability_zone = "us-west-2a"
   size              = 100
 }
 
