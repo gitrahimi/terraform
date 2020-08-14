@@ -29,3 +29,17 @@ find /var/www -type d -exec chmod 2775 {} \;
 find /var/www -type f -exec chmod 0664 {} \;
 echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 systemctl restart httpd
+
+
+yum install mariadb-server mariadb -y
+    3  systemctl start mariadb
+    4  systemctl enable mariadb
+    5  mysql_secure_installation
+    6  mysql
+    7  systemctl restart mariadb
+    8  getenforce
+    9  vi /etc/sysconfig/selinux
+   10  setenforce 0
+   11  getenforce
+   12  systemctl restart mariadb
+   13  systemctl status mariadb
