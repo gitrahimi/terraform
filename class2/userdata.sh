@@ -31,6 +31,7 @@ systemctl restart httpd
 
 
 ## Installing MariaDB
+amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
 yum install mariadb-server mariadb -y
 systemctl start mariadb
 systemctl enable mariadb
