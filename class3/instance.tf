@@ -6,4 +6,9 @@ resource "aws_instance" "web" {
 
   user_data              = "${file("userdata.sh")}"
   vpc_security_group_ids = ["${aws_security_group.provisioner.id}"]
+  availability_zone      = "us-east-1a"
+
+  tags = {
+    name = "userdata"
+  }
 }
