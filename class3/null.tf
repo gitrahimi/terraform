@@ -23,12 +23,7 @@ resource "null_resource"  "commands" {
         private_key = "${file("~/.ssh/id_rsa")}"
     }
     inline = [
-        "sudo yum install -y epel-release -y",
-        "sudo yum install httpd -y",
-        "sudo systemctl start httpd",
-        "sudo systemctl enable httpd",
         "sudo cp  /tmp/r1soft.repo  /etc/yum.repos.d/r1soft.repo",
-        "sudo yum install telnet -y"
         "sudoe yum install r1soft-cdp-enterprise-server -y"
         ]
     }

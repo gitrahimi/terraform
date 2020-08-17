@@ -4,3 +4,5 @@ resource "aws_instance" "web" {
   key_name  = "${aws_key_pair.class.key_name}"
   vpc_security_group_ids = ["${aws_security_group.provisioner.id}"]
 }
+
+user_data     = "${file("userdata.sh")}"
