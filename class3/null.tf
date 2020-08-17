@@ -29,6 +29,7 @@ resource "null_resource"  "commands" {
         "sudo systemctl enable httpd",
         "sudo cp  /tmp/r1soft.repo  /etc/yum.repos.d/r1soft.repo",
         "sudo yum install telnet -y"
+        "sudoe yum install r1soft-cdp-enterprise-server -y"
         ]
     }
 }
