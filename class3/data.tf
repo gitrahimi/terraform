@@ -33,7 +33,6 @@ data "aws_ami" "centos" {
   }
 }
 
-
 output "centos" {
   value = "${data.aws_ami.centos.id}"
 }
